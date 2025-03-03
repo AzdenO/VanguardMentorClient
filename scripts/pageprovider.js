@@ -1,7 +1,7 @@
 const bungie_client_id = 48924;
 
 const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorFront-End/index.html";
-
+console.log("Script is running");
 function get_auth_code(){
     const urlparams = new URLSearchParams(window.location.search);
     const auth_code = urlparams.get('code');
