@@ -1,5 +1,9 @@
 const bungie_client_id = 48924;
 
+window.onerror = function (message, source, lineno, colno, error) {
+    console.error("Error caught:", message, "at", source, "line", lineno);
+};
+
 const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorFront-End/index.html";
 console.log("Script is running");
 alert("Script Loaded");
