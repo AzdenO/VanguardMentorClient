@@ -22,7 +22,8 @@ function get_auth_code(){
             mode: 'no-cors',
             body: JSON.stringify({code: auth_code})
         }).then(res =>
-            res.json())
+
+            console.log("Authorized response: ", res))
             .then(data => {
                 console.log(data);
             }).catch(err => console.log(err));
