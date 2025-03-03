@@ -4,7 +4,7 @@ window.onerror = function (message, source, lineno, colno, error) {
     console.error("Error caught:", message, "at", source, "line", lineno);
 };
 
-const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorFront-End/";
+const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorClient/";
 console.log("Script is running");
 alert("Script Loaded");
 function get_auth_code(){
