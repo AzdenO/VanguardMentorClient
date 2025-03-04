@@ -21,10 +21,9 @@ function get_auth_code(){
             },
             body: JSON.stringify({code: auth_code})
         }).then(res =>
-
-            console.log("Authorized response: ", res))
+            res.json())
             .then(data => {
-                console.log(data);
+                console.log(data.message);
             }).catch(err => console.log(err));
     }
 }
