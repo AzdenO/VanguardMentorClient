@@ -1,12 +1,6 @@
 const bungie_client_id = 48924;
 
-window.onerror = function (message, source, lineno, colno, error) {
-    console.error("Error caught:", message, "at", source, "line", lineno);
-};
-
 const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorClient/";
-console.log("Script is running");
-alert("Script Loaded");
 function get_auth_code(){
     const urlparams = new URLSearchParams(window.location.search);
     const auth_code = urlparams.get('code');
@@ -19,9 +13,8 @@ function get_auth_code(){
             headers: {
                 'Content-Type': 'application/json'
             },
-            body:{
-                code: auth_code
-            }
+            body: JSON.stringify({code: auth_code})
+
         }).then(res =>
             res.json())
             .then(data => {
