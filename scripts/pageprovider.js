@@ -19,7 +19,9 @@ function get_auth_code(){
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({code: auth_code})
+            body:{
+                code: auth_code
+            }
         }).then(res =>
             res.json())
             .then(data => {
