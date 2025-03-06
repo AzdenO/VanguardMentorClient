@@ -17,7 +17,7 @@ function get_auth_code(){
         }).then(res =>
             res.json())
             .then(data => {
-                console.log(data.message);
+                console.log(data.characters);
             }).catch(err => console.log(err));
     }
 }
