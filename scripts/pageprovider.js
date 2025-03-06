@@ -14,11 +14,10 @@ function get_auth_code(){
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({code: auth_code})
-
         }).then(res =>
             res.json())
             .then(data => {
-                console.log(data.characters);
+                console.log(data.message);
             }).catch(err => console.log(err));
     }
 }
