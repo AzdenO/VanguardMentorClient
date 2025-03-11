@@ -8,7 +8,7 @@ function get_auth_code(){
       window.location.href = bungie_auth;
 
     }else{
-        fetch('https://afd5-109-151-48-85.ngrok-free.app/server/authorize',{
+        fetch('https://b618-109-151-48-85.ngrok-free.app/server/authorize',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
