@@ -52,7 +52,8 @@ function initPage(){
         characterSelect.appendChild(newOption);
     }
 }
-if(await get_auth_code()){
+const success = await get_auth_code();
+if(success){
     initPage();
 }
 
