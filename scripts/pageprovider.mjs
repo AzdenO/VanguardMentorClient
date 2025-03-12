@@ -25,16 +25,17 @@ async function get_auth_code(){
                 },
                 body: JSON.stringify({code: auth_code})
             }).then(res =>
-                res.json())
+                res.json()
+            )
                 .then(data => {
                     console.log(data.characters);
                     initial_response_data = data;
-                    fetch("bodies/coach.html").then(response => response.text()).then(data => {
-                        console.log("Injecting coach body");
-                        document.getElementById('body').innerHTML = data;
-                    });
-                }).catch(err => console.log(err));
 
+                }).catch(err => console.log(err));
+            await fetch("bodies/coach.html").then(response => response.text()).then(data => {
+                console.log("Injecting coach body");
+                document.getElementById('body').innerHTML = data;
+            });
         }
         return true;
     }
