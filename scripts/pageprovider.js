@@ -7,7 +7,9 @@ function get_auth_code(){
     const disabled = true;
     if(!disabled){
         if (auth_code == null){
+            console.log("Fetching login body");
             fetch("bodies/login.html").then(response => response.text()).then(data => {
+                console.log("Injecting login body");
                 document.getElementById('body').innerHTML = data;
             });
 
