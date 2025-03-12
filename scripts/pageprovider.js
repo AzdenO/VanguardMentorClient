@@ -4,7 +4,7 @@ const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&r
 function get_auth_code(){
     const urlparams = new URLSearchParams(window.location.search);
     const auth_code = urlparams.get('code');
-    const disabled = true;
+    const disabled = false;
     if(!disabled){
         if (auth_code == null){
             console.log("Fetching login body");
