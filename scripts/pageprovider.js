@@ -30,6 +30,7 @@ function get_auth_code(){
                         setTimeout(()=>{
                             var characterSelect = document.getElementById('characterSelect');
                             for(const chrc in data.characters){
+                                console.log("Parsing character");
                                 var newOption = document.createElement("option");
                                 newOption.value = data.characters[chrc][0];
                                 newOption.text = data.characters[chrc][2]+" | Power: "+data.characters[chrc][1];
