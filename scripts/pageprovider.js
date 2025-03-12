@@ -12,7 +12,7 @@ function get_auth_code(){
             });
 
         }else{
-            fetch('https://b618-109-151-48-85.ngrok-free.app/server/authorize',{
+            fetch('https://baa8-109-151-48-85.ngrok-free.app/server/authorize',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
