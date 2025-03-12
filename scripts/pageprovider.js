@@ -1,7 +1,10 @@
 const bungie_client_id = 48924;
 
-const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorClient/";
-function get_auth_code(){
+//const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorClient/";
+var initial_response_data = null;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+async function get_auth_code(){
     const urlparams = new URLSearchParams(window.location.search);
     const auth_code = urlparams.get('code');
     const disabled = false;
@@ -14,7 +17,7 @@ function get_auth_code(){
             });
 
         }else{
-            fetch('https://baa8-109-151-48-85.ngrok-free.app/server/authorize',{
+            await fetch('https://baa8-109-151-48-85.ngrok-free.app/server/authorize',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,20 +30,25 @@ function get_auth_code(){
                     fetch("bodies/coach.html").then(response => response.text()).then(data => {
                         console.log("Injecting coach body");
                         document.getElementById('body').innerHTML = data;
-                        setTimeout(function(){
-                            var characterSelect = document.getElementById('characterSelect');
-                            for(const chrc in data.characters){
-                                console.log("Parsing character");
-                                var newOption = document.createElement("option");
-                                newOption.value = data.characters[chrc][0];
-                                newOption.text = data.characters[chrc][2]+" | Power: "+data.characters[chrc][1];
-                                characterSelect.appendChild(newOption);
-                            }
-                        },10);
+                        initial_response_data = data;
                     });
                 }).catch(err => console.log(err));
         }
     }
 }
 
-get_auth_code();
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function initPage(){
+    var characterSelect = document.getElementById('characterSelect');
+    for(const chrc in initial_response_data.characters){
+        console.log("Parsing character");
+        var newOption = document.createElement("option");
+        newOption.value = initial_response_data.characters[chrc][0];
+        newOption.text = initial_response_data.characters[chrc][2]+" | Power: "+initial_response_data.characters[chrc][1];
+        characterSelect.appendChild(newOption);
+    }
+}
+await get_auth_code();
+initPage();
+
