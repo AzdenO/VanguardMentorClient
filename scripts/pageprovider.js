@@ -27,7 +27,7 @@ function get_auth_code(){
                     fetch("bodies/coach.html").then(response => response.text()).then(data => {
                         console.log("Injecting coach body");
                         document.getElementById('body').innerHTML = data;
-                        setTimeout(()=>{
+                        setTimeout(function(){
                             var characterSelect = document.getElementById('characterSelect');
                             for(const chrc in data.characters){
                                 console.log("Parsing character");
