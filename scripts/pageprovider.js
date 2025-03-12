@@ -28,6 +28,13 @@ function get_auth_code(){
                         console.log("Injecting coach body");
                         document.getElementById('body').innerHTML = data;
                     });
+                    var characterSelect = document.getElementById('characterSelect');
+                    for(const chrc in data.characters){
+                        var newOption = document.createElement("option");
+                        newOption.value = data.characters[chrc][0];
+                        newOption.text = data.characters[chrc][2]+" | Power: "+data.characters[chrc][1];
+                        characterSelect.appendChild(newOption);
+                    }
                 }).catch(err => console.log(err));
         }
     }
