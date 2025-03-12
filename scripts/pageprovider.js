@@ -7,7 +7,9 @@ function get_auth_code(){
     const disabled = true;
     if(!disabled){
         if (auth_code == null){
-            window.location.href = bungie_auth;
+            fetch("bodies/login.html").then(response => response.text()).then(data => {
+                document.getElementById('body').innerHTML = data;
+            });
 
         }else{
             fetch('https://b618-109-151-48-85.ngrok-free.app/server/authorize',{
