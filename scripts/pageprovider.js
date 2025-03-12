@@ -11,7 +11,7 @@ async function get_auth_code(){
     if(!disabled){
         if (auth_code == null){
             console.log("Fetching login body");
-            fetch("bodies/login.html").then(response => response.text()).then(data => {
+            await fetch("bodies/login.html").then(response => response.text()).then(data => {
                 console.log("Injecting login body");
                 document.getElementById('body').innerHTML = data;
             });
