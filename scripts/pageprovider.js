@@ -14,8 +14,8 @@ async function get_auth_code(){
             fetch("bodies/login.html").then(response => response.text()).then(data => {
                 console.log("Injecting login body");
                 document.getElementById('body').innerHTML = data;
-                return false;
             });
+            return false;
 
         }else {
             await fetch('https://baa8-109-151-48-85.ngrok-free.app/server/authorize', {
