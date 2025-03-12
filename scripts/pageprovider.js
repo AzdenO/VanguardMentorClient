@@ -24,6 +24,10 @@ function get_auth_code(){
                 res.json())
                 .then(data => {
                     console.log(data.characters);
+                    fetch("bodies/coach.html").then(response => response.text()).then(data => {
+                        console.log("Injecting coach body");
+                        document.getElementById('body').innerHTML = data;
+                    });
                 }).catch(err => console.log(err));
         }
     }
