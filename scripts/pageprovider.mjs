@@ -28,10 +28,10 @@ async function get_auth_code(){
                 res.json())
                 .then(data => {
                     console.log(data.characters);
+                    initial_response_data = data;
                     fetch("bodies/coach.html").then(response => response.text()).then(data => {
                         console.log("Injecting coach body");
                         document.getElementById('body').innerHTML = data;
-                        initial_response_data = data;
                     });
                 }).catch(err => console.log(err));
 
