@@ -77,6 +77,7 @@ body{
     background-color: transparent;
     border-color: transparent;
     font-size: 65%;
+    height: auto;
 }
 
 .toolbutton:hover{
@@ -94,6 +95,10 @@ body{
 }
 
 #characterselector{
+
+}
+
+.toolicon{
 
 }
 /*--------------------------------------------TO BE IMPLEMENTED AT A LATER DATE---------------------------------------*/
