@@ -26,5 +26,5 @@ export const serverBuildByAct = serverDomain+"/server/coach/act_sug_build";
  * The GET endpoint on the API to request coaching for the players weapon skills
  * @type {string}
  */
-export const serverWeaponSkills = serverDomain+"server/coach/weapon_skills";
+export const serverWeaponSkills = serverDomain+"/server/coach/weapon_skills";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
