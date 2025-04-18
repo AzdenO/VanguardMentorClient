@@ -18,7 +18,7 @@ async function getSuggestedBuild(){
         "Content-Type": "application/json",
         "character-id": "TEST",
         "x-access-token": "TEST",
-        "activity-id": "TEST"
+        "activity-id": "TEST",
     }
     const data = await makeGetRequest(endpoints.serverBuildByAct, headers);
 }

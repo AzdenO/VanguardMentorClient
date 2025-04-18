@@ -7,8 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Make a request to the API server, to the provided endpoint and with the provided headers
- * @param {string} endpoint The endpoint to make this request to
- * @param {{}} headers The headers to send for this request
+ *
  * @returns {Promise<void>}
  */
 export async function makeGetRequest(endpoint, headers){
@@ -16,7 +15,7 @@ export async function makeGetRequest(endpoint, headers){
     try{
 
         const res = await fetch(endpoint, {
-            method: "GET",
+            method: 'GET',
             headers: headers
 
         });
@@ -24,11 +23,19 @@ export async function makeGetRequest(endpoint, headers){
             console.log("Error "+await res.text());
         }else{
             const data = await res.json();
+            console.log(JSON.stringify(data,null,4))
         }
 
     }catch(error){
         console.log(error.stack);
         console.log(error.message);
     }
+
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+await makeGetRequest("https://cd47-86-175-119-200.ngrok-free.app/server/coach/act_sug_build",{
+    'content-type': 'application/json',
+    'activity-id': "TEST",
+    'x-access-token': "TEST",
+    'character-id': "TEST",
+})

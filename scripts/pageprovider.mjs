@@ -31,8 +31,6 @@ async function get_auth_code(){
                 res.json()
             )
                 .then(data => {
-                    console.log(data.characters);
-                    console.log(data.bungiename);
                     console.log(data.message);
                     initial_response_data = data;
 
