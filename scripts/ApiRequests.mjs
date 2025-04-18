@@ -23,9 +23,8 @@ export async function makeGetRequest(endpoint, headers){
         if(!res.ok){
             console.log("Error "+await res.text());
         }else{
-            response = await res.text();
-            const data = await response.json();
-            console.log(JSON.stringify(data,null,4))
+            return await res.json();
+
         }
 
     }catch(error){
@@ -36,9 +35,3 @@ export async function makeGetRequest(endpoint, headers){
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-await makeGetRequest("https://cd47-86-175-119-200.ngrok-free.app/server/coach/act_sug_build",{
-    'content-type': 'application/json',
-    'activity-id': "TEST",
-    'x-access-token': "TEST",
-    'character-id': "TEST",
-})
