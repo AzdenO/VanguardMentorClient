@@ -4,7 +4,6 @@
  * @version 0.1.0
  * @author Declan Roy Alan Wadsworth (drw8)
  */
-import * as endpoints from "../scripts/constants/ApiConstants.mjs";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Make a request to the API server, to the provided endpoint and with the provided headers
@@ -16,18 +15,16 @@ export async function makeGetRequest(endpoint, headers){
     console.log("Making request to: "+endpoint+" With headers: "+JSON.stringify(headers));
     try{
 
-        await fetch(endpoint, {
+        const res = await fetch(endpoint, {
             method: "GET",
             headers: headers
 
-        }).then(response => {
-            console.log(response.text());
-            response.json();
-
-        }).then(data =>{
-            return data;
-
         });
+        if(!res.ok){
+            console.log(res.text());
+        }else{
+            const data = await res.json();
+        }
 
     }catch(error){
         console.log(error.stack);
@@ -35,9 +32,3 @@ export async function makeGetRequest(endpoint, headers){
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-await makeGetRequest(endpoints.serverBuildByAct,{
-    "Content-Type": "application/json",
-    "character-id": "TEST",
-    "x-access-token": "TEST",
-    "activity-id": "TEST"
-});
