@@ -12,6 +12,7 @@
  */
 export async function makeGetRequest(endpoint, headers){
     console.log("Making request to: "+endpoint+" With headers: "+JSON.stringify(headers));
+    let response = null;
     try{
 
         const res = await fetch(endpoint, {
@@ -22,12 +23,13 @@ export async function makeGetRequest(endpoint, headers){
         if(!res.ok){
             console.log("Error "+await res.text());
         }else{
-            console.log("Error "+await res.text());
-            const data = await res.json();
+            response = await res.text();
+            const data = await response.json();
             console.log(JSON.stringify(data,null,4))
         }
 
     }catch(error){
+        console.log(response);
         console.log(error.stack);
         console.log(error.message);
     }
