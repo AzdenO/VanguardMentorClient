@@ -22,6 +22,7 @@ export async function makeGetRequest(endpoint, headers){
         if(!res.ok){
             console.log("Error "+await res.text());
         }else{
+            console.log("Error "+await res.text());
             const data = await res.json();
             console.log(JSON.stringify(data,null,4))
         }
