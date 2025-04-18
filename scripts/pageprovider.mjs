@@ -58,7 +58,6 @@ async function get_auth_code(){
 function initPage(){
     var characterSelect = document.getElementById('characterSelect');
     for(const chrc in initial_response_data.characters){
-        console.log("Parsing character");
         var newOption = document.createElement("option");
         newOption.value = initial_response_data.characters[chrc][0];
         newOption.text = initial_response_data.characters[chrc][2]+" | Power: "+initial_response_data.characters[chrc][1];
@@ -66,7 +65,4 @@ function initPage(){
     }
 }
 const success = await get_auth_code();
-if(success){
-    initPage();
-}
 
