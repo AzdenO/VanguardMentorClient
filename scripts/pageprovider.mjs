@@ -18,7 +18,7 @@ async function get_auth_code(){
             return false;
 
         }else {
-            await fetch('https://f345-81-140-243-245.ngrok-free.app/server/authorize', {
+            await fetch('https://cd47-86-175-119-200.ngrok-free.app/server/authorize', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
