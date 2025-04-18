@@ -21,7 +21,8 @@ export async function makeGetRequest(endpoint, headers){
             headers: headers
 
         }).then(response => {
-            response.json()
+            console.log(response.text());
+            response.json();
 
         }).then(data =>{
             return data;
