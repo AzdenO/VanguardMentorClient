@@ -3,6 +3,7 @@ const bungie_client_id = 48924;
 //const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorClient/";
 var initial_response_data = null;
 import {serverAuth} from "./constants/ApiConstants.mjs";
+import {setAccessToken, setRefreshToken} from "./tokenStorage.mjs";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -7,20 +7,20 @@
 
 import {makeGetRequest} from "./ApiRequests.mjs";
 import * as endpoints from "./constants/ApiConstants.mjs";
+import * as tokens from "./tokenStorage.mjs";
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Method attached to the button for getting a suggested build for a selected activity
  * @returns {Promise<void>}
  */
 async function getSuggestedBuild(){
-    const headers = {
+    let headers = {
         "Content-Type": "application/json",
         "character-id": "TEST",
         "x-access-token": "TEST",
         "activity-id": "TEST"
     }
     const data = await makeGetRequest(endpoints.serverBuildByAct, headers);
-    console.log(JSON.stringify(data, null, 4));
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
