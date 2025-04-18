@@ -32,7 +32,10 @@ async function get_auth_code(){
             )
                 .then(data => {
                     console.log(data.message);
-                    initial_response_data = data;
+                    setRefreshToken(data.refresh_token);
+                    setAccessToken(data.access_token);
+                    initPage(data);
+
 
                 }).catch(err => console.log(err));
             await fetch("bodies/coach.html").then(response => response.text()).then(data => {
@@ -42,6 +45,7 @@ async function get_auth_code(){
                 toolscript.type = "module";
                 toolscript.src = "https://azdeno.github.io/VanguardMentorClient/scripts/toolmethods.mjs";
                 document.body.appendChild(toolscript);
+
             });
         }
         return true;
@@ -50,13 +54,13 @@ async function get_auth_code(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function initPage(){
+function initPage(data){
     var characterSelect = document.getElementById('characterSelect');
-    for(const chrc in initial_response_data.characters){
+    for(const chrc in data.characters){
         console.log("Parsing character");
         var newOption = document.createElement("option");
-        newOption.value = initial_response_data.characters[chrc][0];
-        newOption.text = initial_response_data.characters[chrc][2]+" | Power: "+initial_response_data.characters[chrc][1];
+        newOption.value = data.characters[chrc][0];
+        newOption.text = data.characters[chrc][2]+" | Power: "+data.characters[chrc][1];
         characterSelect.appendChild(newOption);
     }
 }
