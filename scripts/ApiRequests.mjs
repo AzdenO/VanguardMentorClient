@@ -10,7 +10,10 @@ export async function makeGetRequest(endpoint, headers){
         await fetch(endpoint, {
             method: "GET",
             headers: headers
-        }).then(response => response.json()).then(function(data){
+        }).then(response => {
+            console.log(response.toString());
+            response.json()
+        }).then(function(data){
             return data;
         })
     }catch(error){
