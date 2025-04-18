@@ -41,7 +41,7 @@ async function get_auth_code(){
                 document.getElementById('body').innerHTML = data;
                 let toolscript = document.createElement("script");
                 toolscript.type = "module";
-                toolscript.src = "https://azdeno.github.io/VanguardMentorClient/scripts/toolMethods.mjs";
+                toolscript.src = "https://azdeno.github.io/VanguardMentorClient/scripts/toolmethods.mjs";
                 document.body.appendChild(toolscript);
             });
         }
