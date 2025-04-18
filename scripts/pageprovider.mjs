@@ -2,6 +2,8 @@ const bungie_client_id = 48924;
 
 //const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorClient/";
 var initial_response_data = null;
+import {serverAuth} from "./constants/ApiConstants.mjs";
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 async function get_auth_code(){
@@ -18,7 +20,7 @@ async function get_auth_code(){
             return false;
 
         }else {
-            await fetch('https://cd47-86-175-119-200.ngrok-free.app/server/authorize', {
+            await fetch(serverAuth, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
