@@ -21,7 +21,7 @@ export async function makeGetRequest(endpoint, headers){
 
         });
         if(!res.ok){
-            console.log(res.text());
+            console.log("Error "+await res.text());
         }else{
             const data = await res.json();
         }
