@@ -14,7 +14,8 @@ export async function makeGetRequest(endpoint, headers){
             return data;
         })
     }catch(error){
-        console.log("error");
+        console.log(error.stack);
+        console.log(error.message);
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
