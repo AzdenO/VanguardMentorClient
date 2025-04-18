@@ -39,9 +39,9 @@ async function get_auth_code(){
             await fetch("bodies/coach.html").then(response => response.text()).then(data => {
                 console.log("Injecting coach body");
                 document.getElementById('body').innerHTML = data;
-                const toolscript = document.createElement("script");
+                let toolscript = document.createElement("script");
                 toolscript.type = "module";
-                toolscript.src = "../scripts/toolMethods.mjs";
+                toolscript.src = "https://azdeno.github.io/VanguardMentorClient/scripts/toolMethods.mjs";
                 document.body.appendChild(toolscript);
             });
         }
