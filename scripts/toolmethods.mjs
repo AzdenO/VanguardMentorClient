@@ -15,10 +15,10 @@ import * as tokens from "./tokenStorage.mjs";
  */
 async function getSuggestedBuild(){
     let headers = {
-        "Content-Type": "application/json",
-        "character-id": "TEST",
-        "x-access-token": "TEST",
-        "activity-id": "TEST",
+        "Content-Type": 'application/json',
+        "character-id": 'TEST',
+        "x-access-token": 'TEST',
+        "activity-id": 'TEST',
     }
     const data = await makeGetRequest(endpoints.serverBuildByAct, headers);
 }
