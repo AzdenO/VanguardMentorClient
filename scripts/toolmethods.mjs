@@ -20,7 +20,7 @@ async function getSuggestedBuild(){
         "activity-id": "TEST"
     }
     const data = await makeGetRequest(endpoints.serverBuildByAct, headers);
-    console.log(data);
+    console.log(JSON.stringify(data, null, 4));
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
