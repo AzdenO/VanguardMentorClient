@@ -7,7 +7,7 @@
  * The API servers base domain
  * @type {string}
  */
-export const serverDomain = "192.168.10.46";
+export const serverDomain = "192.168.10.46:3000";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * The basic POST authorisation endpoint used to establish a presence on the server using a provided bungie OAuth2 code,
