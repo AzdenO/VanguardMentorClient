@@ -33,10 +33,20 @@ async function getWeaponSkills(){
     const data = await makeGetRequest(endpoints.serverWeaponSkills, headers);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+async function getCharacterAnalysis(){
+    let headers = {
+        "Content-Type": 'application/json',
+        "x-access-token": getAccessToken(),
+        "character-id": 'TEST',
+    }
+    const data = await makeGetRequest(endpoints.serverCharacterAnalysis, headers);
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 function attachToWindow(){
     window.toolMethods = {
         "ActBuild": getSuggestedBuild,
         "WeaponSkills": getWeaponSkills,
+        "CharacterAnalysis": getCharacterAnalysis,
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
