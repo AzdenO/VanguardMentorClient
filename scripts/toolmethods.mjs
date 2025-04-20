@@ -37,7 +37,7 @@ async function getCharacterAnalysis(){
     let headers = {
         "Content-Type": 'application/json',
         "x-access-token": getAccessToken(),
-        "character-id": 'TEST',
+        "character-id": '2305843009262116386',
     }
     const data = await makeGetRequest(endpoints.serverCharacterAnalysis, headers);
 }
