@@ -37,3 +37,10 @@ export const serverWeaponSkills = serverDomain+"/server/coach/weapon_skills";
  */
 export const serverCharacterAnalysis = serverDomain+"/server/coach/characterAnalysis";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * VanguardMentor.getRecentActivities
+ * The GET endpoint on the API to request the past 30 activities for a selected character
+ * @type {string}
+ */
+export const serverRecentActs = serverDomain+"/server/coach/recentactivities";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
