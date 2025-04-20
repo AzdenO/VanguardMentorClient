@@ -22,7 +22,7 @@ var refreshToken = "null";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Function to store an access token received from the API server
- * @param accessToken the token to store within this modules scope
+ * @param {string} accesstoken the token to store within this modules scope
  */
 export function setAccessToken(accesstoken){
     accessToken = accesstoken;

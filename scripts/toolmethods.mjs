@@ -28,6 +28,7 @@ async function getWeaponSkills(){
     let headers = {
         "Content-Type": 'application/json',
         "x-access-token": getAccessToken(),
+        "skills-type": true,
     }
     const data = await makeGetRequest(endpoints.serverWeaponSkills, headers);
 }
