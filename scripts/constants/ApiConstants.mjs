@@ -42,5 +42,12 @@ export const serverCharacterAnalysis = serverDomain+"/server/coach/characterAnal
  * The GET endpoint on the API to request the past 30 activities for a selected character
  * @type {string}
  */
-export const serverRecentActs = serverDomain+"/server/coach/recentactivities";
+export const serverRecentActs = serverDomain+"/server/bungie/recentactivities";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * VanguardMentor.getKnowledgeBase
+ * The GET endpoint on the API to request a knowledge base of the game containing all keywords to players need to know
+ * @type {string}
+ */
+export const serverKnowledgeBase = serverDomain+"/server/bungie/knowledge";
+
