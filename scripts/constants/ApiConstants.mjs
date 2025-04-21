@@ -21,28 +21,28 @@ export const serverAuth = serverDomain+"/server/authorize";
  * The GET endpoint on the API to request a build suggestion for a specific activity
  * @type {string}
  */
-export const serverBuildByAct = serverDomain+"/server/coach/act_sug_build";
+export const serverBuildByAct = serverDomain+"/server/coach/character/CHARACTERID/activity/ACTIVITYID/build";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * VanguardMentor.GetWeaponSkillsAnalysis
  * The GET endpoint on the API to request coaching for the players weapon skills
  * @type {string}
  */
-export const serverWeaponSkills = serverDomain+"/server/coach/weapon_skills";
+export const serverWeaponSkills = serverDomain+"/server/coach/weapon-skills/";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * VanguardMentor.getCharacterAnalysis
  * The GET endpoint on the API to request an analysis of a selected characters current configuration
  * @type {string}
  */
-export const serverCharacterAnalysis = serverDomain+"/server/coach/characterAnalysis";
+export const serverCharacterAnalysis = serverDomain+"/server/coach/character/CHARACTERID/analysis";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * VanguardMentor.getRecentActivities
  * The GET endpoint on the API to request the past 30 activities for a selected character
  * @type {string}
  */
-export const serverRecentActs = serverDomain+"/server/bungie/recentactivities";
+export const serverRecentActs = serverDomain+"/server/bungie/character/CHARACTERID/recent-activities";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * VanguardMentor.getKnowledgeBase
@@ -50,4 +50,19 @@ export const serverRecentActs = serverDomain+"/server/bungie/recentactivities";
  * @type {string}
  */
 export const serverKnowledgeBase = serverDomain+"/server/bungie/knowledge";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * VanguardMentor.getCoachData
+ * The GET endpoint on the API to request basic coaching data the server stores about a player, used as part of page initialisation
+ * @type {string}
+ */
+export const serverCoachData = serverDomain+"/server/coach/data";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * VanguardMentor.getActivitySkillsAnalysis
+ * The GET endpoint on the API to request analysis of a players activity skills
+ * @type {string}
+ */
+export const serverActivitySkills = serverDomain+"/server/coach/activity-skills/";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
