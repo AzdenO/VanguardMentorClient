@@ -121,7 +121,7 @@ body{
     position: fixed;
     bottom: 0;
     height: 5%;
-    padding: 5%;
+    padding-left: 5%;
 }
 #bannerdata{
     font-size: 10%;
