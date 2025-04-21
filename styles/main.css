@@ -121,5 +121,9 @@ body{
     position: fixed;
     bottom: 0;
     height: 5%;
+    padding: 5%;
+}
+#bannerdata{
+    font-size: 10%;
 }
 /*--------------------------------------------TO BE IMPLEMENTED AT A LATER DATE---------------------------------------*/
