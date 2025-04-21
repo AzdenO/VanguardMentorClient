@@ -33,7 +33,7 @@ async function getWeaponSkills(){
         "x-access-token": getAccessToken(),
     }
     const url = endpoints.serverWeaponSkills+"?skillstype="+true;
-    const data = await makeGetRequest(endpoints.serverWeaponSkills, headers);
+    const data = await makeGetRequest(url, headers);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 async function getCharacterAnalysis(){
@@ -56,4 +56,5 @@ function attachToWindow(){
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-attachToWindow();
+//attachToWindow();
+await getWeaponSkills();

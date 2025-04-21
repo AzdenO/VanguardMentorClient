@@ -28,7 +28,7 @@ export const serverBuildByAct = serverDomain+"/server/coach/character/CHARACTERI
  * The GET endpoint on the API to request coaching for the players weapon skills
  * @type {string}
  */
-export const serverWeaponSkills = serverDomain+"/server/coach/weapon-skills/";
+export const serverWeaponSkills = serverDomain+"/server/coach/weapon-skills";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * VanguardMentor.getCharacterAnalysis
