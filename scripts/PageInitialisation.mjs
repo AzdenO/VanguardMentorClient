@@ -1,0 +1,31 @@
+/**
+ * @module PageInitialisation
+ * @description Module to encapsulate methods that provide page initialisation services
+ * @version 0.1.0
+ * @author Declan Roy Alan Wadsworth
+ */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+export async function initialisePage(characters,displayname){
+    setCharacterData(characters);
+    setDisplayName(displayname);
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function setCharacterData(characters){
+    var characterSelect = document.getElementById('characterSelect');
+    for(const chrc in characters){
+        var newOption = document.createElement("option");
+        newOption.value = characters[chrc][0];
+        newOption.text = characters[chrc][2]+" | Power: "+characters[chrc][1];
+        characterSelect.appendChild(newOption);
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function setDisplayName(name){
+    var displayElement = document.getElementById('bungiename');
+    displayElement.textContent = name;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function setCoachData(){
+
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

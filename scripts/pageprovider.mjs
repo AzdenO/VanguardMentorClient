@@ -1,9 +1,12 @@
+import {makeGetRequest} from "./ApiRequests.mjs";
+
 const bungie_client_id = 48924;
 
 //const bungie_auth = "https://www.bungie.net/en/OAuth/Authorize?client_id=48924&response_type=code&redirect_uri=https://AzdenO.github.io/VanguardMentorClient/";
 var initial_response_data = null;
-import {serverAuth} from "./constants/ApiConstants.mjs";
+import * as Endpoints from "./constants/ApiConstants.mjs";
 import {setAccessToken, setRefreshToken} from "./tokenStorage.mjs";
+import {initialisePage} from "./PageInitialisation.mjs";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -21,7 +24,7 @@ async function get_auth_code(){
             return false;
 
         }else {
-            await fetch(serverAuth, {
+            await fetch(Endpoints.serverAuth, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -45,7 +48,7 @@ async function get_auth_code(){
                 toolscript.type = "module";
                 toolscript.src = "https://azdeno.github.io/VanguardMentorClient/scripts/toolmethods.mjs";
                 document.body.appendChild(toolscript);
-                initPage()
+                initialisePage(initial_response_data.characters,initial_response_data.bungiename);
 
             });
         }
@@ -55,14 +58,7 @@ async function get_auth_code(){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function initPage(){
-    var characterSelect = document.getElementById('characterSelect');
-    for(const chrc in initial_response_data.characters){
-        var newOption = document.createElement("option");
-        newOption.value = initial_response_data.characters[chrc][0];
-        newOption.text = initial_response_data.characters[chrc][2]+" | Power: "+initial_response_data.characters[chrc][1];
-        characterSelect.appendChild(newOption);
-    }
-}
+
+
 const success = await get_auth_code();
 
