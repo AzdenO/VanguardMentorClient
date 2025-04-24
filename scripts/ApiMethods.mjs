@@ -56,4 +56,8 @@ function attachToWindow(){
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-attachToWindow();
+export const apiMethods ={
+    getWeaponSkills,
+    getCharacterAnalysis,
+    getSuggestedBuild
+}

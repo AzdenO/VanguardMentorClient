@@ -65,4 +65,11 @@ export const serverCoachData = serverDomain+"/server/coach/data";
  */
 export const serverActivitySkills = serverDomain+"/server/coach/activity-skills/";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * VanguardMentor.getActivityAnalysis
+ * The GET endpoint on the API to request analysis of an activity the player took part in
+ * @type {string}
+ */
+export const serverActivityAnalysis = serverDomain+"/server/coach/character/CHARACTERID/played/INSTANCEID/analysis";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
