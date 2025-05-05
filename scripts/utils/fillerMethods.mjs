@@ -9,7 +9,10 @@
  * @param {Element} element The selector to fill
  * @param {Array<>}array
  */
-export function fillSelector(element, array){
+export function fillRecentActivities(element, array){
+    for(const activity of array){
+        var newOption = document.createElement("option");
 
+    }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
