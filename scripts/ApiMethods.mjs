@@ -61,17 +61,24 @@ async function getCharacterAnalysis(characterId){
     const data = await makeGetRequest(url, headers);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-function attachToWindow(){
-    window.toolMethods = {
-        "ActBuild": getSuggestedBuild,
-        "WeaponSkills": getWeaponSkills,
-        "CharacterAnalysis": getCharacterAnalysis,
+async function getActivityFeedback(character, instance, token){
+    let headers = {
+        "Content-Type": 'application/json',
+        "x-access-token": token,
     }
+    let pathParams = {
+        "CHARACTERID": character,
+        "INSTANCEID": instance
+    }
+    const url = replaceMultiple(/CHARACTERID|INSTANCEID/g, pathParams, endpoints.serverActivityAnalysis);
+    const data = await makeGetRequest(url, headers);
+    return data;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 export const apiMethods ={
     getWeaponSkills,
     getCharacterAnalysis,
     getSuggestedBuild,
-    getRecentActivities
+    getRecentActivities,
+    getActivityFeedback
 }

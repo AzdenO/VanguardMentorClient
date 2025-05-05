@@ -11,8 +11,10 @@
  */
 export function fillRecentActivities(element, array){
     for(const activity of array){
-        var newOption = document.createElement("option");
-
+        const newOption = document.createElement("option");
+        newOption.text = activity.Date+" | "+"activity.Activity"+" | "+activity.Type;
+        newOption.value = activity.Hash;
+        element.appendChild(newOption);
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

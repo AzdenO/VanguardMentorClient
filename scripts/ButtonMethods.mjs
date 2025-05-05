@@ -33,12 +33,22 @@ function weaponSkills(){
 async function activitySummaries(){
     const characterid = document.getElementById("characters").value;//get currently selected character
     const data = await apiMethods.getRecentActivities(getAccessToken(),characterid);//request this characters recent activities
-    console.log(JSON.stringify(data.content, null, 4));
-    await fetch("toolWindows/activitySummaries.html").then(
+    await fetch("toolWindows/activitySummaries.html").then(//fetch prestructured tool window div
         response => response.text()).then(data =>{
-            document.getElementById("toolcontent").innerHTML = data
+            document.getElementById("toolcontent").innerHTML = data//insert div into tool window
         });
+    fillRecentActivities(document.getElementById("activitySelect"),data.content);//fill activity selector with fetched activities
+    document.getElementById("getCoaching").onclick = async () => {
+        const data = await apiMethods.getActivityFeedback(
+            document.getElementById("characters").value,
+            document.getElementById("activitySelect").value,
+            getAccessToken()
+        )
+        var paragraph = document.createElement("p");
+        paragraph.textContent = JSON.stringify(data,null, 4);
+        document.getElementById("content").appendChild(paragraph);
 
+    };
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
