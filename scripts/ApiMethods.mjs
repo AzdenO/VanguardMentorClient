@@ -84,12 +84,16 @@ async function getKnowledgeBase(){
     return data;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-async function getActivitySkills(){
+async function getActivitySkills(characterid){
     let headers = {
         "Content-Type": 'application/json',
         "x-access-token": getAccessToken(),
     }
-    const data = await makeGetRequest(endpoints.serverActivitySkills, headers);
+    let params = {
+        "CHARACTERID": characterid,
+    }
+    const url = replaceMultiple(/CHARACTERID/g,params,endpoints.serverActivitySkills);
+    const data = await makeGetRequest(url, headers);
     return data;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////

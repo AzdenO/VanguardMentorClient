@@ -31,7 +31,7 @@ async function characterAnalysis(){
 async function weaponSkills(){
     document.getElementById("toolcontent").innerHTML = "";
     const data = await apiMethods.getWeaponSkills();
-    var paragraph = document.createElement("p");
+    let paragraph = document.createElement("p");
     paragraph.textContent = JSON.stringify(data.generated,null, 4);
     document.getElementById("toolcontent").appendChild(paragraph);
 }
@@ -42,7 +42,8 @@ async function weaponSkills(){
  */
 async function activitySkills(){
     document.getElementById("toolcontent").innerHTML = ""
-    const data = await apiMethods.getActivitySkills();
+    const characterid = document.getElementById("characters").value;//get currently selected character
+    const data = await apiMethods.getActivitySkills(characterid);
     var paragraph = document.createElement("p");
     paragraph.textContent = JSON.stringify(data.generated,null, 4);
     document.getElementById("toolcontent").appendChild(paragraph);
