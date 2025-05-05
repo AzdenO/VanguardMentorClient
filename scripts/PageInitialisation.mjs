@@ -11,7 +11,7 @@ export async function initialisePage(characters,displayname){
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function setCharacterData(characters){
-    var characterSelect = document.getElementById('characterSelect');
+    var characterSelect = document.getElementById('characters');
     for(const chrc in characters){
         var newOption = document.createElement("option");
         newOption.value = characters[chrc][0];
