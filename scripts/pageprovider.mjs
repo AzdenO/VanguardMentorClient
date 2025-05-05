@@ -46,7 +46,7 @@ async function get_auth_code(){
                 document.getElementById('body').innerHTML = data;
                 let toolscript = document.createElement("script");
                 toolscript.type = "module";
-                toolscript.src = "https://azdeno.github.io/VanguardMentorClient/scripts/toolmethods.mjs";
+                toolscript.src = "https://azdeno.github.io/VanguardMentorClient/scripts/ButtonMethods.mjs";
                 document.body.appendChild(toolscript);
                 initialisePage(initial_response_data.characters,initial_response_data.bungiename);
 

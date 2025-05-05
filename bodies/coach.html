@@ -11,7 +11,7 @@
             <p class="subtext">Cayde-6 Approved Service</p>
         </div>
         <div id="characterselector">
-            <select id="characterSelect" name="Guardian Selection">
+            <select class="selector" name="Guardian Selection" id="characters">
 
             </select>
         </div>
@@ -26,7 +26,7 @@
                 <img class="toolicon" src="resources/images/icons/activity_build.png" alt="debugging">
                 Activity Builds
             </button>
-            <button class="toolbutton" onclick="window.toolMethods.WeaponSkills()">
+            <button class="toolbutton" onclick="window.toolWindowMethods.weaponSkills()">
                 <img class="toolicon" src="resources/images/icons/wpn_skills.png" alt="debugging">
                 Weapon Skills
             </button>
@@ -35,11 +35,11 @@
                 Activity Skills
             </button>
             <button class="toolbutton">
-                <img class="toolicon" src="resources/images/icons/summaries.png" alt="debugging">
+                <img class="toolicon" src="resources/images/icons/summaries.png" alt="debugging" onclick="window.toolWindowMethods.ActivitySummaries()">
                 Activity Summaries
             </button>
             <button class="toolbutton">
-                <img class="toolicon" src="resources/images/icons/knowledge.png" alt="debugging">
+                <img class="toolicon" src="resources/images/icons/knowledge.png" alt="debugging" onclick="window.toolWindowMethods.KnowledgeBase()">
                 Knowledge
             </button>
             <button class="toolbutton">

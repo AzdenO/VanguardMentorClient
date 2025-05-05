@@ -88,7 +88,7 @@ body{
     border-radius: 0.5em;
 }
 
-#characterSelect{
+.selector{
     border-radius: 20em;
     border: black solid 0.05em;
     background-color: white;

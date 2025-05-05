@@ -36,15 +36,28 @@ async function getWeaponSkills(){
     const data = await makeGetRequest(url, headers);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-async function getCharacterAnalysis(){
+async function getRecentActivities(token, characterId){
+    let headers = {
+        "Content-Type": 'application/json',
+        "x-access-token": token,
+    }
+    let pathParams = {
+        "CHARACTERID": characterId
+    }
+    const url = replaceMultiple(/CHARACTERID/g,pathParams,endpoints.serverRecentActs);
+    const data = await makeGetRequest(url, headers);
+    return data;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+async function getCharacterAnalysis(characterId){
     let headers = {
         "Content-Type": 'application/json',
         "x-access-token": getAccessToken(),
     }
     const pathParams = {
-        "CHARACTERID": "TEST"
+        "CHARACTERID": characterId,
     }
-    const url = replaceMultiple(/CHARACTERID/g,pathParams,endpoints.serverCharacterAnalysis)
+    const url = replaceMultiple(/CHARACTERID/g,pathParams,endpoints.serverCharacterAnalysis);
     const data = await makeGetRequest(url, headers);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,5 +72,6 @@ function attachToWindow(){
 export const apiMethods ={
     getWeaponSkills,
     getCharacterAnalysis,
-    getSuggestedBuild
+    getSuggestedBuild,
+    getRecentActivities
 }
