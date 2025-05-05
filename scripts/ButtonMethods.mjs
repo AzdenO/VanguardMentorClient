@@ -15,15 +15,37 @@ import {getAccessToken,getRefreshToken} from "./tokenStorage.mjs";
  * Function that loads the character analysis tool window configuration, gets the currently selected character, and makes
  * the character analysis request to the server
  */
-function characterAnalysis(){
+async function characterAnalysis(){
+    document.getElementById("toolcontent").innerHTML = ""
     const selectedCharacterId = document.getElementById("characters").value;
+    const data = await apiMethods.getCharacterAnalysis(selectedCharacterId);
+    var paragraph = document.createElement("p");
+    paragraph.textContent = JSON.stringify(data.generated,null, 4);
+    document.getElementById("toolcontent").appendChild(paragraph);
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Function to fetch player weapon skills content and display on page
  */
-function weaponSkills(){
+async function weaponSkills(){
+    document.getElementById("toolcontent").innerHTML = "";
+    const data = await apiMethods.getWeaponSkills();
+    var paragraph = document.createElement("p");
+    paragraph.textContent = JSON.stringify(data.generated,null, 4);
+    document.getElementById("toolcontent").appendChild(paragraph);
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Function to fetch player activity skills content and display on page
+ *
+ */
+async function activitySkills(){
+    document.getElementById("toolcontent").innerHTML = ""
+    const data = await apiMethods.getActivitySkills();
+    var paragraph = document.createElement("p");
+    paragraph.textContent = JSON.stringify(data.generated,null, 4);
+    document.getElementById("toolcontent").appendChild(paragraph);
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,6 +53,7 @@ function weaponSkills(){
  * Function to configure tool window when activity summary button is clicked
  */
 async function activitySummaries(){
+    document.getElementById("toolcontent").innerHTML = ""
     const characterid = document.getElementById("characters").value;//get currently selected character
     const data = await apiMethods.getRecentActivities(getAccessToken(),characterid);//request this characters recent activities
     await fetch("toolWindows/activitySummaries.html").then(//fetch prestructured tool window div
@@ -52,10 +75,20 @@ async function activitySummaries(){
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+async function activityBuilds(){
+    document.getElementById("toolcontent").innerHTML = ""
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Method to configure tool window when knowledge base button is clicked
  */
-function knowledgeBase(){
+async function knowledgeBase(){
+    document.getElementById("toolcontent").innerHTML = ""
+    const data = await apiMethods.getKnowledgeBase();
+    await fetch("toolWindows/knowledgeBase.html").then(//fetch prestructured tool window div
+        response => response.text()).then(data =>{
+        document.getElementById("toolcontent").innerHTML = data//insert div into tool window
+    });
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,7 +97,10 @@ function attachToGlobals(){
         characterAnalysis,
         activitySummaries,
         knowledgeBase,
-        weaponSkills
+        weaponSkills,
+        activityBuilds,
+        activitySkills,
+
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -75,10 +75,29 @@ async function getActivityFeedback(character, instance, token){
     return data;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+async function getKnowledgeBase(){
+    let headers = {
+        "Content-Type": 'application/json',
+    }
+    const data = await makeGetRequest(endpoints.serverKnowledgeBase, headers);
+    return data;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+async function getActivitySkills(){
+    let headers = {
+        "Content-Type": 'application/json',
+        "x-access-token": getAccessToken(),
+    }
+    const data = await makeGetRequest(endpoints.serverActivitySkills, headers);
+    return data;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 export const apiMethods ={
     getWeaponSkills,
     getCharacterAnalysis,
     getSuggestedBuild,
     getRecentActivities,
-    getActivityFeedback
+    getActivityFeedback,
+    getKnowledgeBase,
+    getActivitySkills
 }

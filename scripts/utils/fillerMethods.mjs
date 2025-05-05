@@ -18,3 +18,12 @@ export function fillRecentActivities(element, array){
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Method for iteratively filling the two selectors used in the knowledge base window
+ * @param {{keyword: Element, type: Element}} selectors The two selectors to fill
+ * @param {Object} knowledge Knowledge base retrieved from the API
+ */
+export function fillKnowledge(selectors, knowledge){
+
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
