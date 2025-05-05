@@ -34,6 +34,7 @@ async function getWeaponSkills(){
     }
     const url = endpoints.serverWeaponSkills+"?skillstype="+true;
     const data = await makeGetRequest(url, headers);
+    return data;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 async function getRecentActivities(token, characterId){
