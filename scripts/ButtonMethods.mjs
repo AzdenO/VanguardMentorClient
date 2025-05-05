@@ -33,7 +33,7 @@ function weaponSkills(){
 async function activitySummaries(){
     const characterid = document.getElementById("characters").value;//get currently selected character
     const data = await apiMethods.getRecentActivities(getAccessToken(),characterid);//request this characters recent activities
-
+    console.log(JSON.stringify(data));
     await fetch("toolWindows/activitySummaries.html").then(
         response => response.text()).then(data =>{
             document.getElementById("toolcontent").innerHTML = data
