@@ -7,7 +7,7 @@
  * @author Declan Roy Alan Wadsworth
  */
 import {apiMethods} from "./ApiMethods.mjs";
-import {fillSelector} from "./utils/fillerMethods.mjs";
+import {fillRecentActivities} from "./utils/fillerMethods.mjs";
 import {getAccessToken,getRefreshToken} from "./tokenStorage.mjs";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
