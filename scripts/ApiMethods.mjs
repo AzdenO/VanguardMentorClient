@@ -60,6 +60,7 @@ async function getCharacterAnalysis(characterId){
     }
     const url = replaceMultiple(/CHARACTERID/g,pathParams,endpoints.serverCharacterAnalysis);
     const data = await makeGetRequest(url, headers);
+    return data;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 async function getActivityFeedback(character, instance, token){
