@@ -16,7 +16,7 @@ export async function makeGetRequest(endpoint, headers){
     try{
 
         const res = await fetch(endpoint, {
-            signal: AbortSignal.timeout(20000),
+            signal: AbortSignal.timeout(30000),
             method: 'GET',
             headers: headers
 
