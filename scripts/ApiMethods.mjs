@@ -20,8 +20,8 @@ async function getSuggestedBuild(){
         "x-access-token": getAccessToken(),
     }
     const pathParams = {
-        "CHARACTERID": "TEST",
-        "ACTIVITYID": "TEST"
+        "CHARACTERID": "2305843009262116386",
+        "ACTIVITYID": "4196944364"
     }
     const url = replaceMultiple(/CHARACTERID|ACTIVITYID/g,pathParams,endpoints.serverBuildByAct)
     const data = await makeGetRequest(url, headers);
